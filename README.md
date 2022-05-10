@@ -1,9 +1,11 @@
-BioSlimContainers
-=================
+samtools/bcftools/htslib
+========================
 
-Slim bioinformatics tools containers based on alpine linux.
+[![Build docker container](https://github.com/bioslimcontainers/samtools/actions/workflows/docker.yml/badge.svg)](https://github.com/bioslimcontainers/samtools/actions/workflows/docker.yml)
 
-* [Docker Hub](https://hub.docker.com/u/bioslimcontainers)
+Slim samtools/bcftools/htslib containers based on alpine linux.
+
+* [Docker Hub](https://hub.docker.com/r/bioslimcontainers/samtools)
 
 Upstream Projects
 -----------------
