@@ -2,9 +2,9 @@ name: Build docker container
 
 on:
   push:
-    branches: [ master, action-test ]
+    branches: [master, action-test]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   buildx:
@@ -12,13 +12,13 @@ jobs:
     strategy:
       matrix:
         config:
-          - version: "1.15.1"
+          - version: "1.20"
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
         with:
           install: true
       - name: Build
