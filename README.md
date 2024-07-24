@@ -3,9 +3,9 @@ samtools/bcftools/htslib
 
 [![Build docker container](https://github.com/bioslimcontainers/samtools/actions/workflows/docker.yml/badge.svg)](https://github.com/bioslimcontainers/samtools/actions/workflows/docker.yml)
 
-Slim samtools/bcftools/htslib containers based on alpine linux.
+Slim samtools/bcftools/htslib containers based on debian-slim.
 
-* [Docker Hub](https://hub.docker.com/r/bioslimcontainers/samtools)
+* [Github Packages](https://github.com/bioslimcontainers/samtools/pkgs/container/samtools)
 
 Upstream Projects
 -----------------

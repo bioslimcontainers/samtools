@@ -34,6 +34,8 @@ WORKDIR /htslib-${HTSLIB_VERSION}
 RUN ./configure && make -j4 && make install
 
 FROM debian:12-slim
+LABEL maintainer="okamura@informationsea.info"
+LABEL version="1.1"
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y curl tar xz-utils bzip2 libcurl4 libncursesw6 libssl3 zlib1g liblzma5 libbz2-1.0 && \
     apt-get clean && \
