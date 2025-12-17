@@ -51,3 +51,7 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.config.version }}
           platforms: ${{ matrix.platform }}
+          build-args: |
+            SAMTOOLS_VERSION=${{ matrix.config.version }}
+            BCFTOOLS_VERSION=${{ matrix.config.version }}
+            HTSLIB_VERSION=${{ matrix.config.version }}
