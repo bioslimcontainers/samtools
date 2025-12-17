@@ -1,4 +1,4 @@
-FROM debian:12-slim as download
+FROM debian:13-slim as download
 RUN apt-get update && apt-get upgrade -y && apt-get install -y curl tar xz-utils bzip2
 ARG SAMTOOLS_VERSION=1.20
 ARG BCFTOOLS_VERSION=1.20
@@ -10,7 +10,7 @@ RUN tar xjf samtools-${SAMTOOLS_VERSION}.tar.bz2
 RUN tar xjf bcftools-${BCFTOOLS_VERSION}.tar.bz2
 RUN tar xjf htslib-${HTSLIB_VERSION}.tar.bz2
 
-FROM debian:12-slim as buildenv
+FROM debian:13-slim as buildenv
 RUN apt-get update && apt-get upgrade -y && apt-get install -y curl tar xz-utils bzip2 build-essential libssl-dev libcurl4-openssl-dev zlib1g-dev libbz2-dev liblzma-dev
 
 FROM buildenv as samtools-build
@@ -33,7 +33,7 @@ COPY --from=download /htslib-${HTSLIB_VERSION} /htslib-${HTSLIB_VERSION}
 WORKDIR /htslib-${HTSLIB_VERSION}
 RUN ./configure && make -j4 && make install
 
-FROM debian:12-slim
+FROM debian:13-slim
 LABEL maintainer="okamura@informationsea.info"
 LABEL version="1.1"
 RUN apt-get update && apt-get upgrade -y && \
